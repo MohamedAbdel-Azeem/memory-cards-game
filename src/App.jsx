@@ -38,7 +38,7 @@ function App() {
   };
 
   return (
-    <div className='w-dvw h-dvh bg-slate-950 text-slate-100 flex flex-col'>
+    <div className='w-dvw min-h-dvh bg-slate-950 text-slate-100 flex flex-col'>
       <header className='p-1 flex items-center justify-center bg-gradient-to-r from-blue-950 to bg-slate-950'>
         <img src={logoPng} alt='Rick and Morty Logo' className='md:w-80 w-48'/>
         <a href='https://github.com/MohamedAbdel-Azeem/memory-cards-game' target='_blank' className='absolute md:right-10 right-4'>
@@ -61,7 +61,7 @@ function App() {
         playGame && !loading && <Game cards={cards}/>
       }
 
-      <button onClick={toggleAudio} className="bg-emerald-600 hover:bg-emerald-700 text-slate-100 p-3 shadow-md rounded-full absolute bottom-5 left-10">
+      <button onClick={toggleAudio} className="bg-emerald-600 hover:bg-emerald-700 text-slate-100 p-3 shadow-md rounded-full fixed bottom-5 left-10">
             <audio ref={audioRef} loop></audio>
             <Icon path={playAudio ? mdiMusicNoteOff : mdiMusicNote} size={1} />
       </button> 

@@ -35,7 +35,6 @@ export function LoadingScreen({ setCards, setLoading, setPlayGame }) {
                     />
             );
             });
-        console.log(cards);
         setCards(cards);
         setLoading(false);
         setPlayGame(true);
