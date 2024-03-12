@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function Card({name,image,setLose,setPicked,setScore}){
+export function Card({name,image,setLose,setScore,shuffle}){
     const [isPicked,setIsPicked] = useState(false);
 
     const handleClick = () => {
@@ -10,6 +10,7 @@ export function Card({name,image,setLose,setPicked,setScore}){
         }
         setIsPicked(true);
         setScore(prevScore => prevScore + 1);
+        shuffle();
     };
 
     return (

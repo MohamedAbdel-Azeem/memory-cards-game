@@ -1,10 +1,11 @@
-import {useState} from 'react';
+import {useState,useRef} from 'react';
 import { Card } from './Card';
 
 
 export function Game({cards}){
     const [score,setScore] = useState(0);
     const [lose,setLose] = useState(false);
+    const [cardElements,setCardElements] = useState([]);
     return (
         <div className='flex flex-col justify-center items-center pt-4'>
             <div className='p-2 bg-slate-50 rounded-md w-44 text-black'>
@@ -19,6 +20,7 @@ export function Game({cards}){
                         image={card.image}
                         setScore={setScore}
                         setLose={setLose}
+                        shuffle={()=>{shuffle(cards)}}
                     />);
                 })
                 }
@@ -26,3 +28,11 @@ export function Game({cards}){
         </div>
     );
 }
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }

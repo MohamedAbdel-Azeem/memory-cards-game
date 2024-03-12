@@ -40,7 +40,7 @@ function App() {
   return (
     <div className='w-dvw min-h-dvh bg-slate-950 text-slate-100 flex flex-col'>
       <header className='p-1 flex items-center justify-center bg-gradient-to-r from-blue-950 to bg-slate-950'>
-        <img src={logoPng} alt='Rick and Morty Logo' className='md:w-80 w-48'/>
+        <img src={logoPng} alt='Rick and Morty Logo' className='md:w-80 w-48 cursor-pointer' onClick={()=>{setLoading(false);setPlayGame(false)}}/>
         <a href='https://github.com/MohamedAbdel-Azeem/memory-cards-game' target='_blank' className='absolute md:right-10 right-4'>
           <img src={githubLogo} alt='github logo' className='md:w-14 w-7 hover:animate-spin' />
         </a>
@@ -50,7 +50,11 @@ function App() {
         !playGame && !loading &&         
         <div className='w-full py-14 h-full flex flex-col gap-6 items-center justify-start'>
           <img src={runningGif} alt='Rick and Morty Running' className='max-md:px-6'/>
-          <p className='text-center text-xl font-mono font-medium'>Game is simple , Just don't choose the Same Character Twice!</p>
+          <p className='text-center text-xl font-mono font-medium'>
+          Game is simple , Just don't choose the Same Character Twice!
+          <br /> 
+          You Can Click on the Logo to Return to Main menu.
+          </p>
           <button className='bg-emerald-600 hover:bg-emerald-700 text-slate-100 p-3 shadow-md rounded-lg transition-all duration-200 hover:scale-110 hover:shadow-xl' onClick={()=>setLoading(true)}>Start Game</button>
         </div>
       }
