@@ -1,6 +1,6 @@
 const url = "https://rickandmortyapi.com/api/character";
 
-export async function fetchGifs() {
+export async function fetchAPI() {
     try {
         const response = await fetch(url);
         if (!response.ok) {
