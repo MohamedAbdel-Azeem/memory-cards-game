@@ -7,6 +7,7 @@ import { mdiMusicNote , mdiMusicNoteOff  } from '@mdi/js';
 import music from './assets/audio/rick_and_morty_intro.mp3';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Game } from './components/Game';
+import './style.css';
 
 function App() {
   const [loading, setLoading] = useState(false);

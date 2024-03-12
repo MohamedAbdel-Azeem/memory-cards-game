@@ -1,0 +1,9 @@
+.flip-card .flip {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .flip-card.flipping .flip {
+    transform: rotateY(180deg);
+  }

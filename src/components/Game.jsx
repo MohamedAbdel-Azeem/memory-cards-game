@@ -5,7 +5,7 @@ import { Card } from './Card';
 export function Game({cards}){
     const [score,setScore] = useState(0);
     const [lose,setLose] = useState(false);
-    const [cardElements,setCardElements] = useState([]);
+    const [isFlipping, setIsFlipping] = useState(false);
     return (
         <div className='flex flex-col justify-center items-center pt-4'>
             <div className='p-2 bg-slate-50 rounded-md w-44 text-black'>
@@ -21,6 +21,9 @@ export function Game({cards}){
                         setScore={setScore}
                         setLose={setLose}
                         shuffle={()=>{shuffle(cards)}}
+                        lost={lose}
+                        isFlipping={isFlipping}
+                        setIsFlipping={setIsFlipping}
                     />);
                 })
                 }
