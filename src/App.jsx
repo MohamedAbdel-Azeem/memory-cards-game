@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [playAudio, setPlayAudio] = useState(false);
   const [playGame, setPlayGame] = useState(false);
-  const [cards, setCards] = useState([]);
+  const [cardsData, setCardsData] = useState([]);
 
 
   const toggleAudio = () => {
@@ -55,10 +55,10 @@ function App() {
         </div>
       }
       {
-        loading && <LoadingScreen setCards={setCards} setLoading={setLoading} setPlayGame={setPlayGame} />
+        loading && <LoadingScreen setCards={setCardsData} setLoading={setLoading} setPlayGame={setPlayGame} />
       }
       {
-        playGame && !loading && <Game cards={cards}/>
+        playGame && !loading && <Game cards={cardsData}/>
       }
 
       <button onClick={toggleAudio} className="bg-emerald-600 hover:bg-emerald-700 text-slate-100 p-3 shadow-md rounded-full fixed bottom-5 left-10">
