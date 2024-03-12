@@ -1,8 +1,35 @@
-# React + Vite
+# Rick and Morty Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a memory game based on the popular TV show Rick and Morty. The game is simple: just don't choose the same character twice!
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can play the game [here](https://rick-and-morty-memory-game-three.vercel.app/).
+
+## Features
+
+- Beautiful Rick and Morty themed design
+- Score tracking
+- Win/Lose detection
+- Card shuffle animation
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- Material Design Icons
+
+## Installation
+
+To run the game locally, follow these steps:
+
+1. Clone the repository
+
+2. Install the dependencies:
+
+npm install
+
+3. Start the development server:
+
+npm run dev
