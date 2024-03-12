@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import cardBack from "../assets/images/card-back-img.jpg";
 
 export function Card({
@@ -6,26 +6,38 @@ export function Card({
   image,
   setLose,
   setScore,
+  score,
   shuffle,
   lost,
   isFlipping,
   setIsFlipping,
+  setWin,
 }) {
   const [isPicked, setIsPicked] = useState(false);
 
   const handleClick = () => {
-    if (isPicked || lost) {
+    if (score >= 10) {
+        setWin(true);
+        return;
+    }
+    if (isPicked || lost ) {
       setLose(true);
       return;
     }
-    setIsPicked(true);
     setScore((prevScore) => prevScore + 1);
+    setIsPicked(true);
     setIsFlipping(true);
     setTimeout(() => {
       setIsFlipping(false);
-    }, 1000);
+    }, 700);
     shuffle();
   };
+
+  useEffect(() => {
+    if (score === 0){
+      setIsPicked(false);
+    }
+  },[score]);
 
   return (
     <button onClick={handleClick} className={`flip-card ${isFlipping ? "flipping" : ""} `} >
